@@ -1,0 +1,71 @@
+    //Task 1
+func chetnechet (_ number: Int){
+    if (number  % 2 == 0){
+        print("Число чётное")
+    } else {
+        print("Число не чётное")
+    }
+}
+chetnechet(10)
+chetnechet(1)
+
+    //Task 2
+func delna3 (_ number: Int){
+    if (number  % 3 == 0){
+        print("Без остатка")
+    } else {
+        print("С остатком")
+    }
+}
+delna3(10)
+delna3(9)
+
+    //Task 3
+    
+    var arr = [Int](1...100)
+    print (arr)
+    
+    
+    //Task 4
+    
+    for i in arr {
+        if (i % 2) == 0 || (i % 3) != 0 {
+            arr.remove(at: arr.firstIndex(of: i)!)
+        }
+    }
+    
+    print ("Изменённый масив")
+    print (arr)
+    
+    
+    //Task 5
+    
+    func fibonachi(count: Int) -> [Int] {
+        var arr: [Int] = [1,2]
+        for i in 0 ... count {
+            arr.append(arr[i]+arr[i+1])
+        }
+        return arr
+    }
+    
+    print(fibonachi(count: 50))
+    
+    //Task 6
+    
+    var array = [Int](2...600)
+    
+    for divider in array {
+        for element in array {
+            if element % divider == 0 && element != divider {
+                array.remove(at: array.firstIndex(of: element)!)
+            }
+        }
+        if array.count > 100 {
+            array.removeLast()
+        }
+    }
+    
+    print (array)
+    
+    
+    
