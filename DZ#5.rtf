@@ -1,0 +1,716 @@
+{\rtf1\ansi\ansicpg1251\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;\f2\fswiss\fcharset0 Helvetica;
+}
+{\colortbl;\red255\green255\blue255;\red252\green95\blue163;\red0\green0\blue0;\red255\green255\blue255;
+\red208\green168\blue255;\red252\green106\blue93;\red208\green191\blue105;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c47843\c69804;\csgray\c0\c0;\cssrgb\c100000\c100000\c100000\c85000;
+\cssrgb\c85490\c72941\c100000;\cssrgb\c100000\c50588\c43922;\cssrgb\c85098\c78824\c48627;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab593
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf2 \cb3 import
+\f1\b0 \cf4  Foundation
+\f2 \cf0 \
+\
+
+\f0\b \cf2 enum
+\f1\b0 \cf4  windows \{
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 case
+\f1\b0 \cf4  open, close
+\f2 \cf0 \
+
+\f1 \cf4 \}
+\f2 \cf0 \
+\
+
+\f0\b \cf2 enum
+\f1\b0 \cf4  engine \{
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 case
+\f1\b0 \cf4  run, stop 
+\f2 \cf0 \
+
+\f1 \cf4 \}
+\f2 \cf0 \
+\
+
+\f0\b \cf2 protocol
+\f1\b0 \cf4  Car \{
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  model: \cf5 String\cf4  \{ 
+\f0\b \cf2 get
+\f1\b0 \cf4  \}
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  yearOfRelease: \cf5 Int\cf4  \{ 
+\f0\b \cf2 get
+\f1\b0 \cf4  \}
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  windows: \cf5 windows\cf4  \{ 
+\f0\b \cf2 get
+\f1\b0 \cf4  
+\f0\b \cf2 set
+\f1\b0 \cf4  \}
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  engine: \cf5 engine\cf4  \{ 
+\f0\b \cf2 get
+\f1\b0 \cf4  
+\f0\b \cf2 set
+\f1\b0 \cf4  \}
+\f2 \cf0 \
+
+\f1 \cf4 \}
+\f2 \cf0 \
+\
+
+\f0\b \cf2 extension
+\f1\b0 \cf4  \cf5 Car\cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 mutating
+\f1\b0 \cf4  
+\f0\b \cf2 func
+\f1\b0 \cf4  Windows(status: \cf5 windows\cf4 ) \{
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 switch
+\f1\b0 \cf4  status\{
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 case
+\f1\b0 \cf4  .open:
+\f2 \cf0 \
+
+\f1 \cf4             print(\cf6 "\cf4 \\(model)\cf6 : windows are opening..."\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4             
+\f0\b \cf2 self
+\f1\b0 \cf4 .windows = .open
+\f2 \cf0 \
+
+\f1 \cf4             
+\f0\b \cf2 case
+\f1\b0 \cf4  .close: 
+\f2 \cf0 \
+
+\f1 \cf4                 print(\cf6 "\cf4 \\(model)\cf6 : windows are closing..."\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4                 
+\f0\b \cf2 self
+\f1\b0 \cf4 .windows = .close
+\f2 \cf0 \
+
+\f1 \cf4         \}
+\f2 \cf0 \
+
+\f1 \cf4     \}
+\f2 \cf0 \
+
+\f1 \cf4     
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 mutating
+\f1\b0 \cf4  
+\f0\b \cf2 func
+\f1\b0 \cf4  Engine (status: \cf5 engine\cf4 )\{
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 switch
+\f1\b0 \cf4  status \{
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 case
+\f1\b0 \cf4  .run:
+\f2 \cf0 \
+
+\f1 \cf4             print (\cf6 "\cf4 \\(model)\cf6 : engine switching on ..."\cf4 ) 
+\f2 \cf0 \
+
+\f1 \cf4             
+\f0\b \cf2 self
+\f1\b0 \cf4 .engine = .run
+\f2 \cf0 \
+
+\f1 \cf4             
+\f0\b \cf2 case
+\f1\b0 \cf4  .stop:
+\f2 \cf0 \
+
+\f1 \cf4                 print (\cf6 "\cf4 \\(model)\cf6 : engine switching off ..."\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4                 
+\f0\b \cf2 self
+\f1\b0 \cf4 .engine = .stop
+\f2 \cf0 \
+
+\f1 \cf4         \}
+\f2 \cf0 \
+
+\f1 \cf4     \}
+\f2 \cf0 \
+
+\f1 \cf4 \}
+\f2 \cf0 \
+\
+
+\f0\b \cf2 protocol
+\f1\b0 \cf4  TrunkCar: \cf5 Car\cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  bodyVolume: \cf5 Int\cf4  \{ 
+\f0\b \cf2 get
+\f1\b0 \cf4  \}
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  bodyFreeSpace: \cf5 Int\cf4  \{ 
+\f0\b \cf2 get
+\f1\b0 \cf4  \}
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  cargoVolume: \cf5 Int\cf4  \{ 
+\f0\b \cf2 get
+\f1\b0 \cf4  
+\f0\b \cf2 set
+\f1\b0 \cf4  \}
+\f2 \cf0 \
+
+\f1 \cf4 \}
+\f2 \cf0 \
+\
+
+\f0\b \cf2 extension
+\f1\b0 \cf4  \cf5 TrunkCar\cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 mutating
+\f1\b0 \cf4  
+\f0\b \cf2 func
+\f1\b0 \cf4  PutCargoToBody(volume: \cf5 Int\cf4 ) \{
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 if
+\f1\b0 \cf4  bodyFreeSpace >= volume \{
+\f2 \cf0 \
+
+\f1 \cf4             print (\cf6 "\cf4 \\(model)\cf6 : cargo Volume \cf4 \\(volume)\cf6  putting to the body ..."\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4             
+\f0\b \cf2 self
+\f1\b0 \cf4 .cargoVolume += volume
+\f2 \cf0 \
+
+\f1 \cf4             \} 
+\f0\b \cf2 else
+\f1\b0 \cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4                 print (\cf6 "? \cf4 \\(model)\cf6 : Not enough space in the body for cargo volume \cf4 \\(volume)\cf6 "\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4             \}
+\f2 \cf0 \
+
+\f1 \cf4     \}
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 mutating
+\f1\b0 \cf4  
+\f0\b \cf2 func
+\f1\b0 \cf4  RemoveCargoFromBody(volume: \cf5 Int\cf4 )\{
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 if
+\f1\b0 \cf4  
+\f0\b \cf2 self
+\f1\b0 \cf4 .bodyVolume >= volume \{
+\f2 \cf0 \
+
+\f1 \cf4             print (\cf6 "\cf4 \\(model)\cf6 : cargo volume \cf4 \\(volume)\cf6   removing from body ..."\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4             
+\f0\b \cf2 self
+\f1\b0 \cf4 .cargoVolume -= volume
+\f2 \cf0 \
+
+\f1 \cf4         \} 
+\f0\b \cf2 else
+\f1\b0 \cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4             print (\cf6 "? \cf4 \\(model)\cf6 : No such amount of cargo (\cf4 \\(volume)\cf6 ) in the body"\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4         \}
+\f2 \cf0 \
+
+\f1 \cf4     \}
+\f2 \cf0 \
+
+\f1 \cf4 \}
+\f2 \cf0 \
+\
+
+\f0\b \cf2 protocol
+\f1\b0 \cf4  SportCar: \cf5 Car\cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  maxSpeed: \cf5 Int\cf4  \{
+\f0\b \cf2 get
+\f1\b0 \cf4 \}
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  currentSpeed: \cf5 Int\cf4  \{
+\f0\b \cf2 get
+\f1\b0 \cf4  
+\f0\b \cf2 set
+\f1\b0 \cf4 \}
+\f2 \cf0 \
+
+\f1 \cf4 \}
+\f2 \cf0 \
+\
+
+\f0\b \cf2 extension
+\f1\b0 \cf4  \cf5 SportCar\cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 mutating
+\f1\b0 \cf4  
+\f0\b \cf2 func
+\f1\b0 \cf4  IncreaseSpeed (speed: \cf5 Int\cf4 ) \{
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 if
+\f1\b0 \cf4  speed + currentSpeed <= maxSpeed \{
+\f2 \cf0 \
+
+\f1 \cf4             print(\cf6 "\cf4 \\(model)\cf6 : burns to speed \cf4 \\(speed)\cf6  ... "\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4             
+\f0\b \cf2 self
+\f1\b0 \cf4 .currentSpeed += speed
+\f2 \cf0 \
+
+\f1 \cf4         \} 
+\f0\b \cf2 else
+\f1\b0 \cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4             print (\cf6 "? \cf4 \\(model)\cf6 : car not accelerate to speed \cf4 \\(speed + currentSpeed)\cf6  maximum speed - \cf4 \\(maxSpeed)\cf6 "\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4         \}
+\f2 \cf0 \
+
+\f1 \cf4     \}
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 mutating
+\f1\b0 \cf4  
+\f0\b \cf2 func
+\f1\b0 \cf4  ReduceSpeed(speed: \cf5 Int\cf4 ) \{
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 if
+\f1\b0 \cf4  
+\f0\b \cf2 self
+\f1\b0 \cf4 .currentSpeed >=  speed \{
+\f2 \cf0 \
+
+\f1 \cf4             print(\cf6 "\cf4 \\(model)\cf6 : slows down at \cf4 \\(speed)\cf6 ..."\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4             
+\f0\b \cf2 self
+\f1\b0 \cf4 .currentSpeed -= speed
+\f2 \cf0 \
+
+\f1 \cf4         \} 
+\f0\b \cf2 else
+\f1\b0 \cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4             print (\cf6 "? \cf4 \\(model)\cf6 : stops ..."\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4             
+\f0\b \cf2 self
+\f1\b0 \cf4 .currentSpeed = \cf7 0
+\f2 \cf0 \
+
+\f1 \cf4         \}
+\f2 \cf0 \
+
+\f1 \cf4     \}
+\f2 \cf0 \
+
+\f1 \cf4 \}
+\f2 \cf0 \
+\
+
+\f0\b \cf2 class
+\f1\b0 \cf4  trunkCar: \cf5 TrunkCar\cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  model: \cf5 String
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  yearOfRelease: \cf5 Int\cf4  
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  engine: \cf5 engine
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  windows: \cf5 windows
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 let
+\f1\b0 \cf4  bodyVolume: \cf5 Int
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  bodyFreeSpace: \cf5 Int\cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 get
+\f1\b0 \cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4             
+\f0\b \cf2 return
+\f1\b0 \cf4  bodyVolume - cargoVolume
+\f2 \cf0 \
+
+\f1 \cf4         \}
+\f2 \cf0 \
+
+\f1 \cf4     \}
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  cargoVolume: \cf5 Int
+\f2 \cf0 \
+
+\f1 \cf4     
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 init
+\f1\b0 \cf4  (model: \cf5 String\cf4 , yearOfRelease: \cf5 Int\cf4 , bodyVolume: \cf5 Int\cf4 )\{
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 self
+\f1\b0 \cf4 .bodyVolume = bodyVolume
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 self
+\f1\b0 \cf4 .cargoVolume = \cf7 0\cf4  
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 self
+\f1\b0 \cf4 .model = model
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 self
+\f1\b0 \cf4 .yearOfRelease = yearOfRelease
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 self
+\f1\b0 \cf4 .engine = .stop
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 self
+\f1\b0 \cf4 .windows = .close
+\f2 \cf0 \
+
+\f1 \cf4     \}
+\f2 \cf0 \
+
+\f1 \cf4 \}
+\f2 \cf0 \
+\
+
+\f0\b \cf2 class
+\f1\b0 \cf4  sportCar: \cf5 SportCar\cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 let
+\f1\b0 \cf4  maxSpeed: \cf5 Int
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  currentSpeed: \cf5 Int
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  model: \cf5 String
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  yearOfRelease: \cf5 Int
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  windows: \cf5 windows
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  engine: \cf5 engine
+\f2 \cf0 \
+
+\f1 \cf4     
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 init
+\f1\b0 \cf4  (model: \cf5 String\cf4 ,  yearOfRelease: \cf5 Int\cf4 , maxSpeed: \cf5 Int\cf4 ) \{
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 self
+\f1\b0 \cf4 .maxSpeed = maxSpeed
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 self
+\f1\b0 \cf4 .currentSpeed = \cf7 0
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 self
+\f1\b0 \cf4 .model = model
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 self
+\f1\b0 \cf4 .yearOfRelease = yearOfRelease
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 self
+\f1\b0 \cf4 .engine = .stop
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 self
+\f1\b0 \cf4 .windows = .close
+\f2 \cf0 \
+
+\f1 \cf4     \}
+\f2 \cf0 \
+
+\f1 \cf4 \}
+\f2 \cf0 \
+\
+
+\f0\b \cf2 extension
+\f1\b0 \cf4  \cf5 trunkCar\cf4 : \cf5 CustomStringConvertible\cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  description: \cf5 String\cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 return
+\f1\b0 \cf4  \cf6 "Automobile: \cf4 \\(model)\cf6 \\n"\cf4  +
+\f2 \cf0 \
+
+\f1 \cf4         \cf6 "yearOfRelease: \cf4 \\(yearOfRelease)\cf6 \\n"\cf4  +
+\f2 \cf0 \
+
+\f1 \cf4         \cf6 "engine status: \cf4 \\(engine)\cf6 \\n"\cf4  +
+\f2 \cf0 \
+
+\f1 \cf4         \cf6 "windows status: \cf4 \\(windows)\cf6 \\n"\cf4  +
+\f2 \cf0 \
+
+\f1 \cf4         \cf6 "bodyVolume: \cf4 \\(bodyVolume)\cf6 \\n"\cf4  +
+\f2 \cf0 \
+
+\f1 \cf4         \cf6 "cargoVolume: \cf4 \\(cargoVolume)\cf6 \\n"
+\f2 \cf0 \
+
+\f1 \cf4     \}
+\f2 \cf0 \
+
+\f1 \cf4 \}
+\f2 \cf0 \
+\
+
+\f0\b \cf2 extension
+\f1\b0 \cf4  \cf5 sportCar\cf4 : \cf5 CustomStringConvertible\cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4     
+\f0\b \cf2 var
+\f1\b0 \cf4  description: \cf5 String\cf4  \{
+\f2 \cf0 \
+
+\f1 \cf4         
+\f0\b \cf2 return
+\f1\b0 \cf4  \cf6 "Automobile: \cf4 \\(model)\cf6 \\n"\cf4  +
+\f2 \cf0 \
+
+\f1 \cf4             \cf6 "yearOfRelease: \cf4 \\(yearOfRelease)\cf6 \\n"\cf4  +
+\f2 \cf0 \
+
+\f1 \cf4             \cf6 "engine status: \cf4 \\(engine)\cf6 \\n"\cf4  +
+\f2 \cf0 \
+
+\f1 \cf4             \cf6 "windows status: \cf4 \\(windows)\cf6 \\n"\cf4  +
+\f2 \cf0 \
+
+\f1 \cf4             \cf6 "maxSpeed: \cf4 \\(maxSpeed)\cf6 \\n"\cf4  +
+\f2 \cf0 \
+
+\f1 \cf4             \cf6 "currentSpeed: \cf4 \\(currentSpeed)\cf6 \\n"
+\f2 \cf0 \
+
+\f1 \cf4     \}
+\f2 \cf0 \
+
+\f1 \cf4 \}
+\f2 \cf0 \
+\
+
+\f1 \cf4 print(\cf6 "\\nTask #5"\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4 print(\cf6 "Creating multiple class objects..."\cf4 )
+\f2 \cf0 \
+
+\f0\b \cf2 var
+\f1\b0 \cf4  SportCar1 = sportCar(model: \cf6 "Mazda 3"\cf4 , yearOfRelease: \cf7 2019\cf4 , maxSpeed: \cf7 189\cf4 )
+\f2 \cf0 \
+
+\f0\b \cf2 var
+\f1\b0 \cf4  trunkCar1 = trunkCar(model: \cf6 "Kamaz 10440"\cf4 , yearOfRelease: \cf7 2009\cf4 , bodyVolume: \cf7 20000\cf4 )
+\f2 \cf0 \
+
+\f0\b \cf2 var
+\f1\b0 \cf4  trunkCar2 = trunkCar(model: \cf6 "Man Kas"\cf4 , yearOfRelease: \cf7 2018\cf4 , bodyVolume: \cf7 35000\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4 print(\cf6 "\\nObject control ..."\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4 SportCar1.Engine(status: .run)
+\f2 \cf0 \
+
+\f1 \cf4 SportCar1.Windows(status: .open)
+\f2 \cf0 \
+
+\f1 \cf4 SportCar1.IncreaseSpeed(speed: \cf7 50\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4 SportCar1.IncreaseSpeed(speed: \cf7 600\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4 SportCar1.ReduceSpeed(speed: \cf7 10\cf4 )
+\f2 \cf0 \
+\
+
+\f1 \cf4 trunkCar1.PutCargoToBody(volume: \cf7 19999\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4 trunkCar1.PutCargoToBody(volume: \cf7 2\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4 trunkCar1.Engine(status: .run)
+\f2 \cf0 \
+
+\f1 \cf4 trunkCar2.Windows(status: .open)
+\f2 \cf0 \
+\
+
+\f1 \cf4 print(\cf6 "\\nTask #6"\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4 print(\cf6 "Print descriptions..."\cf4 )
+\f2 \cf0 \
+
+\f1 \cf4 print(SportCar1)
+\f2 \cf0 \
+
+\f1 \cf4 print(trunkCar1)
+\f2 \cf0 \
+
+\f1 \cf4 print(trunkCar2)
+\f2 \cf0 \
+
+\f1 \cf4 print(\cf6 "All tasks done"\cf4 )
+\f2 \cf0 \
+}
